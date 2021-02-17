@@ -9,11 +9,7 @@ let question = "Who was the first American woman in space? ";
 let correctAnswer = "Sally Ride";
 let candidateAnswer = '';
 let questions = [
-  "Who was the first American woman in space? ",
-  "True or false: 5000 meters = 5 kilometers. ",
-  "(5 + 3)/2 * 10 = ? ",
-  `Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? `,
-  'What is the minimum crew size for the ISS? '
+  `Who was the first American woman in space?  `, `True or false: 5 kilometers == 5000 meters?  `, `(5 + 3)/2 * 10 = ?  `, `Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2?  `, 'What is the minimum crew size for the ISS?  '
 ];
 let correctAnswers = [
   "Sally Ride",
@@ -53,7 +49,7 @@ function gradeQuiz(candidateAnswers) {
   while (i < questions.length) {
     
     if (candidateAnswers[i].toLowerCase() == correctAnswers[i].toLowerCase()) {
-      grade += 1;
+      grade += 20;
     } else {
       grade;
     }
@@ -68,7 +64,7 @@ function gradeQuiz(candidateAnswers) {
   } else {
     status = "FAILED";
   }
-  console.log(`>>> Overall Grade: ${(grade / 5) * 100}% (${grade} of 5 responses correct) <<< \n>>> Status: ${status} <<<`);
+  console.log(`>>> Overall Grade: ${grade}% (${grade / 100 * 5} of 5 responses correct) <<< \n>>> Status: ${status} <<<`);
 
   return grade;
 }
