@@ -17,7 +17,7 @@ let questions = [
 ];
 let correctAnswers = [
   "Sally Ride",
-  "True",
+  "true",
   "40",
   "Trajectory",
   "3"
@@ -46,7 +46,6 @@ function gradeQuiz(candidateAnswers) {
   //  1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   let i = 0;
   let grade = 0;
-  let overallGrade = '';
   let status = ''
 
   console.log(`Candidate Name: ${candidateName}`);
@@ -64,13 +63,12 @@ function gradeQuiz(candidateAnswers) {
     i++;
   }
 
-  overallGrade = (grade / 5) * 100;
-  if (overallGrade >= 80) {
+  if (grade >= 4) {
     status = "PASSED";
   } else {
     status = "FAILED";
   }
-  console.log(`>>> Overall Grade: ${overallGrade}% (${grade} of 5 responses correct) <<< \n>>> Status: ${status} <<<`);
+  console.log(`>>> Overall Grade: ${(grade / 5) * 100}% (${grade} of 5 responses correct) <<< \n>>> Status: ${status} <<<`);
 
   return grade;
 }
